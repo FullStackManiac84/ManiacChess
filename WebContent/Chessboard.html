@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Dr Z's Chess API</title>
+	<link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+	<h1>A game of chesssh?</h1>
+	<div class="chessboard">
+        <table>
+            <tr>
+                <td id="A1"></td>
+                <td>N1</td>
+                <td>B1</td>
+                <td>Q</td>
+                <td>K</td>
+                <td>B2</td>
+                <td>N2</td>
+                <td id="A8"></td>
+            </tr>
+            <tr>
+                <td id="B1"></td>
+                <td id="B2"></td>
+                <td>P3</td>
+                <td>P4</td>
+                <td>P5</td>
+                <td>P6</td>
+                <td>P7</td>
+                <td>P8</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+                <td>E</td>
+            </tr>
+            <tr>
+                <td id="G1"></td>
+                <td id="G2"></td>
+                <td>P3</td>
+                <td>P4</td>
+                <td>P5</td>
+                <td>P6</td>
+                <td>P7</td>
+                <td>P8</td>
+            </tr>
+            <tr>
+                <td id="H1"></td>
+                <td>N1</td>
+                <td>B1</td>
+                <td>Q</td>
+                <td>K</td>
+                <td>B2</td>
+                <td>N2</td>
+                <td id="H8"></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+    	<form method="post" action="EOCheck">
+    		<input type="text" name="piece">
+    		<input type="text" name="sq1">
+    		<input type="text" name="sq2">
+    		<input type="submit" value="Update Board">
+    	</form>
+    </div>
+  </body>
+</html>
+
+<script>
+    document.getElementById("A1").innerHTML = "R1B;
+    document.getElementById("A8").innerHTML = "R2B";
+    document.getElementById("H1").innerHTML = "R1W";
+    document.getElementById("H8").innerHTML = "R2W";
+    document.getElementById("B1").innerHTML = "P1W";
+    document.getElementById("B2").innerHTML = "P2W";
+    document.getElementById("G1").innerHTML = "P1B";
+    document.getElementById("G2").innerHTML = "P2B";
+</script>
