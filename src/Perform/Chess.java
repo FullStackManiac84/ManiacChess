@@ -53,30 +53,9 @@ public class Chess {
 	public static Map<Integer, Integer> patMap = new HashMap<>();
 	public static Map<String, Piece> pieceToPiece = new HashMap<>();
 	public static void main(String... args) {
-		//GridMaps.fillGrid();
-		/*Piece myFirstPawn = new Pawn(Color.BLACK);
-		Piece mySecondPawn = new Pawn(Color.WHITE);
-		
-		Piece myFirstRook = new Rook(Color.BLACK);
-		Piece mySecondRook = new Rook(Color.WHITE);*/
-		
-		//myFirstPawn.printLocale();
-		//myFirstPawn.move();
-		//myFirstPawn.printLocale();
-
-		/*mySecondPawn.printLocale();
-		mySecondPawn.move();
-		mySecondPawn.printLocale();*/
-		
-		//myFirstRook.printLocale();
-		//myFirstRook.move("A1", "A8");
-		//myFirstRook.printLocale();
-		
+				
 		Player p1 = new Player(Color.WHITE, "Jeff");
 		Player p2 = new Player(Color.BLACK, "Jim");
-		/*p1.rook1.move("A1","A5");
-		p2.rook2.move("H8","H3");
-		p1.pawn1.move("B1","C1");
-		p2.pawn2.move("G2", "F2");*/
+		
 	}
 }

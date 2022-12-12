@@ -11,10 +11,6 @@ import MongoConJava.ZywickSpecial;
 public class DBCaller {
 	public static void mongoConnect(String nameOfPlayer1, String nameOfPlayer2) {
 		try {
-			//Library.stain("Patty", 3, 6);
-			// try local map first
-			//HashMap<String, Object> testMap = new HashMap<>();
-			//testMap.put("Hello", myPlayer1);
 			Map<String, Object> testMap =  GridMaps.chessboard.entrySet().stream()
 					.collect(Collectors.toMap(e -> e.getKey(), e -> (Object)e.getValue()));
 			Library.stain(nameOfPlayer1, nameOfPlayer2, testMap);

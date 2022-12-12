@@ -13,60 +13,43 @@
         text-align: center;
     }
 </style>
-<title>Patty Cakes Chess API</title>
+<title>A Simple Chess API</title>
 </head>
 <script type="text/javascript">
 	var count = 0;
-	function pieceSelected(namey) {
-	    //document.getElementById("testie").value = "WW";
-	    //let myName = "ZOI";
-	    //console.log("working!");
-		//document.getElementById("varupdate").innerHTML = myName;
-		//document.getElementById("piecetester").value = namey;
+	function pieceSelected(name) {
 		if(count == 0){
-			document.getElementById("sq1").value = namey;
+			document.getElementById("sq1").value = name;
 		} else if (count == 1) {
-			document.getElementById("sq2").value = namey;
+			document.getElementById("sq2").value = name;
 		} else {
 			document.getElementById("sq1").value = "";
 			document.getElementById("sq2").value = "";
 			console.log("Too many clicks.. Start over!");
 		}
 		count++;
-		//"YOU GOT IT";
 		console.log(count);
     }
 </script>
 <body bgcolor="cyan">
 <form method="post" action="EOCheck">
-		<!--  input id="piecetester" type="text" name="piece"-->
 		<input id="sq1" type="text" name="sq1">
 		<input id="sq2" type="text" name="sq2">
 		<input type="submit" value="Update Board">
 	<%
-		//String sq1 = request.getParameter("initialSquare");
 		String sq1 = "P1W";
 		String sq2 = "E";
-		//String piece = "E";
-		String checkStatus = "boo";
+		String checkStatus = "";
 		Player p1 = (Player)request.getSession().getAttribute("player1");
 		if(p1 != null)
 			checkStatus = p1.king.kingInCheck() == true ? "Check" : "Not in Check";
-		/*String pawnName = p1.pawn1.getImageName();
-		request.getSession().setAttribute("player", p1);*/
 		if(request.getAttribute("mySquare") != null){
 			sq2 = request.getAttribute("mySquare").toString();
 		}
 		if(request.getAttribute("myInitial") != null){
 			sq1 = request.getAttribute("myInitial").toString();
 		}
-		/*if(request.getAttribute("myPiece") != null){
-			piece = request.getAttribute("myPiece").toString();
-		}*/
-		//int c = a + b;
-		//int myInt = 64;
-		//Pawn myPawn = new Pawn(Color.WHITE);
-		//myPawn.move("B1", "C1");
+		
 		boolean myBool = GridMaps.chessboard.containsKey("C1");
 		
 		String pieceAtA1 = GridMaps.chessboard.containsKey("A1") ? 
@@ -205,29 +188,16 @@
 	    String pieceAtH8 = GridMaps.chessboard.containsKey("H8") ? 
 	   	    	"<img src='" + GridMaps.chessboard.get("H8").getImageName() + ".jpg' width='100%' height='100%' alt='girl'>" : "E";
   	    	    	    
-  	    //boolean myBool = response.getStatus()
 		int code = response.getStatus();
 		
-		//out.println("Sum is : " + c);
-		//out.println("\nBUUUDDDDDYYYY" + myInt);
-		//out.println("\n" + myBool);
-		//out.println("\n" + code);
 	%>
-	<!--  Pawn is now at <%= myBool == false ? "B1" : "C1" %>
-	Pawn is really at <%= sq2 %>-->
-	<%!
-    void pieceSelected() {
-    	System.out.println("You rang?");
-    }
-	%>
+
 </form>
 <br><br>
 
-<!--  input id="testie" type="text" onclick="pieceSelected()" value="ZZ"-->
-<br>
 <p id="checkingcheck"><%= checkStatus %></p>
 
-<h1>A game of chessssssssssssssssh?</h1>
+<h1>A game of chess?</h1>
 	<div class="chessboard">
         <table>
             <tr>
@@ -402,7 +372,6 @@
 	<p>
 		Black Knight <a href="https://www.rawpixel.com/image/393792">Image</a> by <a href="https://www.rawpixel.com/">rawpixel.com</a><br>
 		White Knight <a href="https://www.rawpixel.com/image/393700">Image</a> by <a href="https://www.rawpixel.com/">rawpixel.com</a><br>
-		<!-- Black Bishop <a href="https://www.rawpixel.com/image/6104296">Image</a><br> -->
 		White Bishop <a href="https://www.rawpixel.com/image/393739">Image</a> by <a href="https://www.rawpixel.com/">rawpixel.com</a><br>
 		Black Pawn <a href="https://www.rawpixel.com/image/6104241">Image</a> by <a href="https://www.rawpixel.com/">rawpixel.com</a><br>
 		White Pawn <a href="https://www.rawpixel.com/image/393769">Image</a> by <a href="https://www.rawpixel.com/">rawpixel.com</a><br>
@@ -411,7 +380,8 @@
 		Black Queen <a href="https://www.rawpixel.com/image/393786">Image</a> by <a href="https://www.rawpixel.com/">rawpixel.com</a><br>
 		White Queen <a href="https://www.rawpixel.com/image/393771">Image</a> by <a href="https://www.rawpixel.com/">rawpixel.com</a><br>
 		Black Bishop <a href="https://www.vectorstock.com/royalty-free-vector/paper-clipped-sticker-chess-piece-bishop-vector-32165953">Vector image by VectorStock / Robot</a><br>
-		
+		White King <a href="https://www.vectorstock.com/royalty-free-vector/white-chess-king-piece-on-background-vector-35153439">Vector image by VectorStock / Robot</a><br>
+		Black King <a href="https://www.vectorstock.com/royalty-free-vector/black-chess-king-piece-on-white-background-vector-35207410">Vector image by VectorStock / Robot</a>
 	</p>
 </div>
 </body>

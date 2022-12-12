@@ -157,9 +157,7 @@ public class Player {
 			Chess.pieceToPiece.put(king.getPieceName(), king);
 		}
 		
-		this.setPlayerName(playerName);
-	//GridMaps.chessboard.put("B1", pawn1);
-	
+		this.setPlayerName(playerName);	
 	}
 
 	public String getPlayerName() { return playerName; }

@@ -1,24 +1,14 @@
 package Perform;
 
 public class Pawn extends Piece {
-		
-		//private boolean isInitialMove = true;
-		
-		//public boolean getIsInitialMove() { return isInitialMove; }
-		
-		//public void setIsInitialMove(boolean isInitialMove) { this.isInitialMove = isInitialMove; }
-	
+
 		public Pawn(Color color, String pieceName, String imageName) {
 			super(color);
 			this.setRank(1);
 			this.setPieceName(pieceName);
 			this.setImageName(imageName);
 		}
-		
-		/*public boolean canMoveTwo() { return isInitialMove; }
-		
-		public void setCannotMoveTwo() { isInitialMove = false; }*/
-		
+
 		public void move(String sq1, String sq2) throws Exception {
 			//x++;
 			int x_init = GridMaps.squareToXY(sq1)[0];
@@ -65,23 +55,5 @@ public class Pawn extends Piece {
 			}
 			
 			// end experimental section 
-			
-			// will add en-passant/+2 initial later
-			/*if(Math.abs(delta_x) == 1 && delta_y == 0 && !GridMaps.chessboard.containsKey(sq2)) {
-				GridMaps.chessboard.put(sq2, this);
-				GridMaps.chessboard.remove(sq1, this);
-			} else if (Math.abs(delta_x) == 1 && Math.abs(delta_y)== 1) {
-				if(GridMaps.chessboard.get(sq2).getColor().equals(this.getColor())) {
-					throw new Exception("One of your pieces is occupying desired square!");
-					//System.out.print("One of your pieces is occupying desired square!");
-				} else {
-					GridMaps.chessboard.get(sq2).setToCaptured();
-					//GridMaps.chessboard.containsValue(this);
-					GridMaps.chessboard.put(sq2, this);
-					GridMaps.chessboard.remove(sq1, this);
-				}
-			} else {
-				System.out.println("Invalid move!! Please try again");
-			}*/
 		}
 }
